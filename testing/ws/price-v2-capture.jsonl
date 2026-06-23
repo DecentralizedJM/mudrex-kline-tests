@@ -1,0 +1,12 @@
+{"ts": "2026-06-17T10:15:55.843694+00:00", "msg": {"method": "SUBSCRIBE", "id": 1, "result": "success"}}
+{"ts": "2026-06-17T10:15:55.844134+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64863.6, "mp": 64862}]}}
+{"ts": "2026-06-17T10:15:56.075505+00:00", "msg": {"method": "LIST_SUBSCRIPTIONS", "id": 2, "result": {"subscriptions": ["kline@1m@btcusdt", "markKline@1m@btcusdt", "ticker@5s"], "ticker_5s_assets": ["btcusdt"], "ticker_1s_assets": []}}}
+{"ts": "2026-06-17T10:16:00.029249+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64864.9, "mp": 64864.9}]}}
+{"ts": "2026-06-17T10:16:00.151343+00:00", "msg": {"stream": "markKline@1m@btcusdt", "data": {"s": "btcusdt", "t": 1781691300, "o": 64858.62, "h": 64864.9, "l": 64837.09, "c": 64864.8}}}
+{"ts": "2026-06-17T10:16:00.941011+00:00", "msg": {"stream": "kline@1m@btcusdt", "data": {"s": "btcusdt", "t": 1781691300, "o": 64858, "h": 64864.9, "l": 64834.1, "c": 64864.9, "v": 10.921}}}
+{"ts": "2026-06-17T10:16:05.027213+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64862.1, "mp": 64863}]}}
+{"ts": "2026-06-17T10:16:10.024504+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64863, "mp": 64862.9}]}}
+{"ts": "2026-06-17T10:16:15.029929+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64885.7, "mp": 64885.8}]}}
+{"ts": "2026-06-17T10:16:20.022351+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64875.2, "mp": 64874.3}]}}
+{"ts": "2026-06-17T10:16:25.026784+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64880.9, "mp": 64875.1}]}}
+{"ts": "2026-06-17T10:16:30.029361+00:00", "msg": {"stream": "ticker@5s", "data": [{"s": "btcusdt", "p": 64863.3, "mp": 64881}]}}

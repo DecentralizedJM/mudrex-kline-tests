@@ -1,0 +1,124 @@
+{
+  "generated": "2026-06-20T04:33:31Z",
+  "tests": [
+    {
+      "name": "ws_subscribe_futures",
+      "streams_seen": [
+        "kline@1m@btcusdt",
+        "markKline@1m@btcusdt",
+        "ticker@5s"
+      ],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "result": "success"
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63483.4,
+              "mp": 63486.49
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63483.4,
+              "mp": 63485.94
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63480,
+              "mp": 63485.48
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63480.1,
+              "mp": 63484.94
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63480.1,
+              "mp": 63483.4
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63480,
+              "mp": 63483.34
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63480.1,
+              "mp": 63482.93
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ws_errors",
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "invalid stream name: kline@5m@btcusdt"
+          }
+        },
+        {
+          "method": "FOO",
+          "id": 2,
+          "error": {
+            "code": 400,
+            "msg": "unknown method"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ws_list_subscriptions",
+      "response": {
+        "stream": "ticker@5s",
+        "data": [
+          {
+            "s": "btcusdt",
+            "p": 63480.1,
+            "mp": 63482.48
+          }
+        ]
+      }
+    }
+  ]
+}

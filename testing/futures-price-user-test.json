@@ -1,0 +1,295 @@
+{
+  "generated": "2026-06-20T04:33:26Z",
+  "start": 1781926400,
+  "end": 1781930000,
+  "tests": [
+    {
+      "name": "bulk_ltp_user_4params",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=1m&start_time=1781926400&end_time=1781930000",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            0,
+            0,
+            0,
+            63426.4,
+            0
+          ],
+          [
+            1781926500,
+            0,
+            0,
+            0,
+            63429.2,
+            0
+          ],
+          [
+            1781926560,
+            0,
+            0,
+            0,
+            63429.2,
+            0
+          ]
+        ],
+        "tick_count": 59,
+        "tick_len": 6
+      }
+    },
+    {
+      "name": "bulk_ltp_futures_full",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=1m&start_time=1781926400&end_time=1781930000&ohlcv=true&partial=true&type=linear",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            63423,
+            63423.9,
+            63385.9,
+            63386,
+            17.273
+          ],
+          [
+            1781926500,
+            63386,
+            63394.4,
+            63380.1,
+            63394.4,
+            9.335
+          ],
+          [
+            1781926560,
+            63394.4,
+            63394.4,
+            63394.3,
+            63394.3,
+            0.177
+          ]
+        ],
+        "tick_count": 59,
+        "tick_len": 6
+      }
+    },
+    {
+      "name": "bulk_mark_user_4params",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/assets/mark-price?assets=btc/usdt&aggregation=1m&start_time=1781926400&end_time=1781930000",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            0,
+            0,
+            0,
+            63388.93
+          ],
+          [
+            1781926500,
+            0,
+            0,
+            0,
+            63394.3
+          ],
+          [
+            1781926560,
+            0,
+            0,
+            0,
+            63394.3
+          ]
+        ],
+        "tick_count": 59,
+        "tick_len": 5
+      }
+    },
+    {
+      "name": "bulk_mark_futures_full",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/assets/mark-price?assets=btc/usdt&aggregation=1m&start_time=1781926400&end_time=1781930000&ohlcv=true&partial=true&type=linear",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            63427.46,
+            63427.49,
+            63388.93,
+            63388.93
+          ],
+          [
+            1781926500,
+            63388.93,
+            63394.4,
+            63380.1,
+            63394.3
+          ],
+          [
+            1781926560,
+            63394.3,
+            63394.4,
+            63394.3,
+            63394.3
+          ]
+        ],
+        "tick_count": 59,
+        "tick_len": 5
+      }
+    },
+    {
+      "name": "single_ltp_klines",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/asset/btc/usdt/klines?start_time=1781926400&end_time=1781930000&aggregation=1m&ohlcv=true&type=linear",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            63423,
+            63423.9,
+            63385.9,
+            63386,
+            17.273
+          ],
+          [
+            1781926500,
+            63386,
+            63394.4,
+            63380.1,
+            63394.4,
+            9.335
+          ],
+          [
+            1781926560,
+            63394.4,
+            63394.4,
+            63394.3,
+            63394.3,
+            0.177
+          ]
+        ],
+        "tick_count": 59
+      }
+    },
+    {
+      "name": "single_mark_klines",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/asset/btc/usdt/mark-price?start_time=1781926400&end_time=1781930000&aggregation=1m&ohlcv=true",
+      "data": {
+        "sample_ticks": [
+          [
+            1781926440,
+            63427.46,
+            63427.49,
+            63388.93,
+            63388.93
+          ],
+          [
+            1781926500,
+            63388.93,
+            63394.4,
+            63380.1,
+            63394.3
+          ],
+          [
+            1781926560,
+            63394.3,
+            63394.4,
+            63394.3,
+            63394.3
+          ]
+        ],
+        "tick_count": 59
+      }
+    },
+    {
+      "name": "last_price",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/asset/btc/usdt/last-price?type=linear",
+      "data": {
+        "success": true,
+        "data": {
+          "price": 63485.6,
+          "time": 1781929920,
+          "asset": "btc/usdt_linear",
+          "start_time": 1585132560,
+          "is_active": true,
+          "price_available": true,
+          "trading_enabled": true,
+          "type": "LINEAR"
+        }
+      }
+    },
+    {
+      "name": "multi_asset_ltp",
+      "status": 200,
+      "url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt,eth/usdt&aggregation=1m&start_time=1781926400&end_time=1781930000",
+      "data": {
+        "btc/usdt": [
+          [
+            1781926440,
+            0,
+            0,
+            0,
+            63426.4,
+            0
+          ],
+          [
+            1781926500,
+            0,
+            0,
+            0,
+            63429.2,
+            0
+          ]
+        ],
+        "eth/usdt": [
+          [
+            1781926440,
+            0,
+            0,
+            0,
+            1706.75,
+            0
+          ],
+          [
+            1781926500,
+            0,
+            0,
+            0,
+            1706.64,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "name": "error_invalid_agg",
+      "status": 400,
+      "url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=99x&start_time=1781926400&end_time=1781930000",
+      "data": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "99x aggregation not supported"
+          }
+        ]
+      }
+    },
+    {
+      "name": "error_start_gt_end",
+      "status": 400,
+      "url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=1m&start_time=1781930000&end_time=1781926400",
+      "data": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "end time should be greater than start time"
+          }
+        ]
+      }
+    }
+  ]
+}

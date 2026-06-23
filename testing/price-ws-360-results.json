@@ -1,0 +1,435 @@
+{
+  "generated": "2026-06-20T04:10:30.254939+00:00",
+  "summary": {
+    "total": 20,
+    "pass": 18,
+    "fail": 2
+  },
+  "results": [
+    {
+      "test_id": "W1-W4",
+      "name": "Linear subscribe all streams",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": false,
+      "notes": "streams={'ticker@5s', 'kline@1s@btcusdt'}",
+      "issues": [
+        "no kline@1m push",
+        "no markKline push"
+      ],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "result": "success"
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63399.4,
+              "mp": 63399.3
+            },
+            {
+              "s": "ethusdt",
+              "p": 1706.9,
+              "mp": 1706.89
+            }
+          ]
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928328,
+            "o": 63399.3,
+            "h": 63399.4,
+            "l": 63399.3,
+            "c": 63399.3,
+            "v": 0.392
+          }
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928329,
+            "o": 63399.3,
+            "h": 63399.4,
+            "l": 63399.3,
+            "c": 63399.4,
+            "v": 0.394
+          }
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63399.4,
+              "mp": 63399.4
+            }
+          ]
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928331,
+            "o": 63399.3,
+            "h": 63406,
+            "l": 63399.3,
+            "c": 63406,
+            "v": 0.863
+          }
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928332,
+            "o": 63399.3,
+            "h": 63406,
+            "l": 63399.3,
+            "c": 63406,
+            "v": 0.864
+          }
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "ethusdt",
+              "p": 1707.31,
+              "mp": 1707.3
+            },
+            {
+              "s": "btcusdt",
+              "p": 63406,
+              "mp": 63402.8
+            }
+          ]
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928335,
+            "o": 63399.3,
+            "h": 63406,
+            "l": 63399.3,
+            "c": 63406,
+            "v": 0.864
+          }
+        },
+        {
+          "stream": "kline@1s@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928336,
+            "o": 63399.3,
+            "h": 63406.1,
+            "l": 63399.3,
+            "c": 63406.1,
+            "v": 0.895
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W5",
+      "name": "LIST_SUBSCRIPTIONS field names",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "F2 documentation mismatch flagged",
+      "issues": [],
+      "messages": [
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63413.9,
+              "mp": 63416.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "test_id": "W6",
+      "name": "UNSUBSCRIBE kline stops pushes",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "pushes_after=0",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "W9",
+      "name": "Ping keepalive 90s",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "4 pings over ~80s",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "W10",
+      "name": "Idle 45s closes connection",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": false,
+      "notes": "closed=False",
+      "issues": [
+        "BUG: idle timeout not enforced within 55s",
+        ""
+      ],
+      "messages": []
+    },
+    {
+      "test_id": "W11",
+      "name": "Invalid stream kline@5m",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "invalid stream name: kline@5m@btcusdt"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W12",
+      "name": "Mixed valid+invalid all-or-nothing",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "invalid stream name: kline@5m@btcusdt"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W13",
+      "name": "Unknown method FOO",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": [
+        {
+          "method": "FOO",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "unknown method"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W14",
+      "name": "Malformed JSON",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "W15",
+      "name": "UNSUBSCRIBE not subscribed",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": [
+        {
+          "method": "UNSUBSCRIBE",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "not subscribed: kline@1m@btcusdt"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W16",
+      "name": "16th subscription 429 limit",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "hit_429=True",
+      "issues": [],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 14,
+          "result": "success"
+        },
+        {
+          "method": "SUBSCRIBE",
+          "id": 15,
+          "result": "success"
+        },
+        {
+          "method": "SUBSCRIBE",
+          "id": 16,
+          "error": {
+            "code": 429,
+            "msg": "subscription limit reached"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W17",
+      "name": "Spot kline subscribe + push",
+      "url": "wss://price.mudrex.com/api/v2/spot",
+      "pass": true,
+      "notes": "got_kline=True",
+      "issues": [],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "result": "success"
+        },
+        {
+          "stream": "kline@1m@btcusdt",
+          "data": {
+            "s": "btcusdt",
+            "t": 1781928480,
+            "o": 63462.9,
+            "h": 63466.1,
+            "l": 63423.8,
+            "c": 63427.1,
+            "v": 4.961036
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W18",
+      "name": "Spot markKline rejected",
+      "url": "wss://price.mudrex.com/api/v2/spot",
+      "pass": true,
+      "notes": "linear-only per contract",
+      "issues": [],
+      "messages": [
+        {
+          "method": "SUBSCRIBE",
+          "id": 1,
+          "error": {
+            "code": 400,
+            "msg": "invalid stream name: markKline@1m@btcusdt"
+          }
+        }
+      ]
+    },
+    {
+      "test_id": "W19",
+      "name": "Spot ticker no mp field",
+      "url": "wss://price.mudrex.com/api/v2/spot",
+      "pass": true,
+      "notes": "",
+      "issues": [],
+      "messages": [
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63427.1
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63424.2
+            }
+          ]
+        },
+        {
+          "stream": "ticker@5s",
+          "data": [
+            {
+              "s": "btcusdt",
+              "p": 63408.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "test_id": "W-v1",
+      "name": "WS v1 legacy probe",
+      "url": "wss://price.mudrex.com/api/v1/klines?aggregation=1m&type=LINEAR&quote=usdt",
+      "pass": true,
+      "notes": "probe only",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "C1",
+      "name": "REST LTP close vs WS kline c",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "rest=63394 ws=63370.1",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "C2",
+      "name": "REST mark close vs WS markKline c",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "rest=63396.67 ws=63374.63",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "C3",
+      "name": "WS ticker p vs REST last-price",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "last=63394 ticker=63372.1",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "C4",
+      "name": "WS ticker mp vs REST mark close",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "mark=63396.67 mp=63372.98",
+      "issues": [],
+      "messages": []
+    },
+    {
+      "test_id": "C7",
+      "name": "Mark vs LTP close differ",
+      "url": "wss://price.mudrex.com/api/v2/linear",
+      "pass": true,
+      "notes": "ltp=63394 mark=63396.67",
+      "issues": [],
+      "messages": []
+    }
+  ]
+}

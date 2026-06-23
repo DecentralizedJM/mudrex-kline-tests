@@ -1,0 +1,292 @@
+{
+  "generated": "2026-06-20T05:27:11Z",
+  "market_stats_/market/stats?symbols=btc/usdt&type=linear": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": []
+    }
+  },
+  "market_stats_/market/stats?symbols=btc/usdt": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": []
+    }
+  },
+  "trade_list": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": [
+        {
+          "id": "019ed14d-1a73-7b83-bd76-35a5248b4533",
+          "name": "Coherent",
+          "symbol": "COHRUSDT",
+          "min_contract": "0.01",
+          "max_contract": "121",
+          "quantity_step": "0.01",
+          "min_price": "0.01",
+          "max_price": "199999.98",
+          "price_step": "0.01",
+          "max_market_contract": "60",
+          "min_notional_value": "5",
+          "funding_fee_perc": "0.00000939",
+          "max_funding_rate": "0.025",
+          "min_funding_rate": "-0.025",
+          "leverage_step": "0.01",
+          "min_leverage": "1",
+          "max_leverage": "10",
+          "funding_interval": 1781942400,
+          "price": "392.02",
+          "last_day_price": "387.45",
+          "change_perc": "1.17950703316557",
+          "volume": "154.62",
+          "popularity": "1061"
+        },
+        {
+          "id": "019ed14d-0d1f-77d6-935c-62d3bc86c5f1",
+          "name": "Fluence Energy Inc (Derivatives)",
+          "symbol": "FLNCUSDT",
+          "min_contract": "0.1",
+          "max_contract": "2084",
+          "quantity_step": "0.1",
+          "min_price": "0.01",
+          "max_price": "199999.98",
+          "price_step": "0.01",
+          "max_market_contract": "1042",
+          "min_notional_value": "5",
+          "funding_fee_perc": "-0.00001751",
+          "max_funding_rate": "0.025",
+          "min_funding_rate": "-0.025",
+          "leverage_step": "0.01",
+          "min_leverage": "1",
+          "max_leverage": "10",
+          "funding_interval": 1781942400,
+          "price": "25.18",
+          "last_day_price": "24.59",
+          "change_perc": "2.39934932899553",
+          "volume": "15955.3",
+          "popularity": "1060"
+        }
+      ]
+    }
+  },
+  "trade_single": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "id": "01903a7b-bf65-707d-a7dc-d7b84c3c756c",
+        "name": "Bitcoin",
+        "symbol": "BTCUSDT",
+        "min_contract": "0.001",
+        "max_contract": "1500",
+        "quantity_step": "0.001",
+        "min_price": "0.1",
+        "max_price": "1999999.8",
+        "price_step": "0.1",
+        "max_market_contract": "150",
+        "min_notional_value": "5",
+        "funding_fee_perc": "-0.00000473",
+        "max_funding_rate": "0.005",
+        "min_funding_rate": "-0.005",
+        "leverage_step": "0.01",
+        "min_leverage": "1",
+        "max_leverage": "100",
+        "funding_interval": 1781942400,
+        "price": "63681.1",
+        "last_day_price": "62581.5",
+        "change_perc": "1.75706878230787",
+        "volume": "48436.564",
+        "popularity": "1",
+        "1d_high": 63945.7,
+        "1d_low": 62271.6,
+        "1d_volume": 48436.564000000035
+      }
+    }
+  },
+  "intervals": {
+    "1m": {
+      "status": 200,
+      "n": 59
+    },
+    "3m": {
+      "status": 400,
+      "n": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "3m aggregation not supported"
+          }
+        ]
+      }
+    },
+    "5m": {
+      "status": 400,
+      "n": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "5m aggregation not supported"
+          }
+        ]
+      }
+    },
+    "15m": {
+      "status": 400,
+      "n": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "15m aggregation not supported"
+          }
+        ]
+      }
+    },
+    "30m": {
+      "status": 400,
+      "n": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "30m aggregation not supported"
+          }
+        ]
+      }
+    },
+    "1h": {
+      "status": 200,
+      "n": 1
+    },
+    "6h": {
+      "status": 200,
+      "n": 0
+    },
+    "12h": {
+      "status": 200,
+      "n": 0
+    },
+    "1d": {
+      "status": 200,
+      "n": 0
+    },
+    "1w": {
+      "status": 200,
+      "n": 0
+    },
+    "1M": {
+      "status": 400,
+      "n": {
+        "success": false,
+        "errors": [
+          {
+            "code": 400,
+            "text": "1M aggregation not supported"
+          }
+        ]
+      }
+    },
+    "3t": {
+      "status": 200,
+      "n": 19
+    },
+    "5t": {
+      "status": 200,
+      "n": 12
+    },
+    "10t": {
+      "status": 200,
+      "n": 6
+    },
+    "4h": {
+      "status": 200,
+      "n": 0
+    },
+    "1mth": {
+      "status": 200,
+      "n": 0
+    }
+  },
+  "bulk_4param": [
+    [
+      1781929680,
+      0,
+      0,
+      0,
+      63564.8,
+      0
+    ],
+    [
+      1781929740,
+      0,
+      0,
+      0,
+      63566.1,
+      0
+    ]
+  ],
+  "bulk_full": [
+    [
+      1781929680,
+      63506.1,
+      63532,
+      63506.1,
+      63532,
+      31.489
+    ],
+    [
+      1781929740,
+      63532,
+      63536,
+      63529.2,
+      63531,
+      11.873
+    ]
+  ],
+  "ws_streams": [
+    "ticker@5s"
+  ],
+  "ws_sample": [
+    {
+      "method": "SUBSCRIBE",
+      "id": 1,
+      "result": "success"
+    },
+    {
+      "stream": "ticker@5s",
+      "data": [
+        {
+          "s": "btcusdt",
+          "p": 63697.9,
+          "mp": 63698
+        }
+      ]
+    },
+    {
+      "stream": "ticker@5s",
+      "data": [
+        {
+          "s": "btcusdt",
+          "p": 63698,
+          "mp": 63697.9
+        }
+      ]
+    },
+    {
+      "stream": "ticker@5s",
+      "data": [
+        {
+          "s": "btcusdt",
+          "p": 63693.2,
+          "mp": 63694.4
+        }
+      ]
+    }
+  ],
+  "ping": "{\"method\":\"\",\"id\":0,\"error\":{\"code\":400,\"msg\":\"invalid JSON\"}}"
+}

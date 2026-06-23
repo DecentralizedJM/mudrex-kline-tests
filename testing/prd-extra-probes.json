@@ -1,0 +1,35 @@
+{
+  "/asset/btc/usdt/index-price?type=linear": {
+    "status": 404,
+    "body": "{\"code\":404,\"text\":\"requested resource was not found\"}"
+  },
+  "/asset/btc/usdt/open-interest?type=linear": {
+    "status": 404,
+    "body": "{\"code\":404,\"text\":\"requested resource was not found\"}"
+  },
+  "/assets/open-interest?assets=btc/usdt&type=linear": {
+    "status": 404,
+    "body": "{\"code\":404,\"text\":\"requested resource was not found\"}"
+  },
+  "1d_history_depth": {
+    "n": 7,
+    "sample": [
+      [
+        1781395200,
+        64416.6,
+        65770,
+        63643.7,
+        65710,
+        52469.377
+      ],
+      [
+        1781481600,
+        65710,
+        67276,
+        65317,
+        66287.2,
+        69019.98199999999
+      ]
+    ]
+  }
+}

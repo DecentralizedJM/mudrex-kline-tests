@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INR Futures API — Complete Test Report</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #172b4d;
+    line-height: 1.55;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+    background: #fff;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #172b4d;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 36px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #dfe1e6;
+    color: #172b4d;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: #172b4d;
+  }
+  p { margin: 8px 0; }
+  a { color: #0052cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .meta {
+    background: #f4f5f7;
+    border: 1px solid #dfe1e6;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 16px 0 8px;
+    font-size: 14px;
+  }
+  .meta div { margin: 3px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0 20px;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #dfe1e6;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #f4f5f7;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #fafbfc; }
+  code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background: #f4f5f7;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 13px;
+    color: #172b4d;
+  }
+  pre {
+    background: #f4f5f7;
+    border: 1px solid #dfe1e6;
+    border-radius: 6px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  pre code { background: none; padding: 0; }
+  .pass { color: #006644; font-weight: 600; }
+  .badge {
+    display: inline-block;
+    background: #e3fcef;
+    color: #006644;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .panel {
+    background: #e3fcef;
+    border-left: 4px solid #006644;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  hr { border: none; border-top: 1px solid #dfe1e6; margin: 28px 0; }
+  .muted { color: #6b778c; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>INR Futures API — Complete Test Report</h1>
+<p class="muted">QA / Integration Test Report</p>
+
+<div class="meta">
+  <div><strong>Date:</strong> 2026-06-15</div>
+  <div><strong>Environment:</strong> Production (<code>https://trade.mudrex.com/fapi/v1</code>)</div>
+  <div><strong>Currency:</strong> INR (<code>trade_currency=INR</code>)</div>
+  <div><strong>Status:</strong> Retest completed — all endpoints pass</div>
+</div>
+
+<p><strong>Detailed logs:</strong></p>
+<table>
+  <thead>
+    <tr><th>Log</th><th>Scope</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="test-results-inr.md">test-results-inr.md</a></td><td>Initial endpoint sweep</td></tr>
+    <tr><td><a href="test-transfer-and-order.md">test-transfer-and-order.md</a></td><td>89.12 transfer + order placement</td></tr>
+    <tr><td><a href="test-report-final.md">test-report-final.md</a></td><td>Position management tests</td></tr>
+    <tr><td><a href="test-report-retest.md">test-report-retest.md</a></td><td>PATCH edit SL/TP &amp; PATCH amend order retest</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Executive summary</h2>
+<table>
+  <thead>
+    <tr><th>Metric</th><th>Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Total INR-capable endpoints</td><td><strong>28</strong></td></tr>
+    <tr><td>Tested</td><td><strong>28</strong></td></tr>
+    <tr><td>Passed</td><td><strong>28</strong></td></tr>
+    <tr><td>Failed</td><td><strong>0</strong></td></tr>
+    <tr><td>Skipped</td><td><strong>0</strong></td></tr>
+    <tr><td>Coverage</td><td><strong>100%</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="panel">All INR futures API endpoints tested and passing on production.</div>
+
+<p><strong>Final account state:</strong></p>
+<table>
+  <thead>
+    <tr><th>Wallet</th><th>Balance</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>INR Futures</td><td><code>~112.15</code> INR</td></tr>
+    <tr><td>INR Spot</td><td><code>0</code></td></tr>
+    <tr><td>Open positions</td><td>None</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Retest results (previously failed/skipped)</h2>
+
+<h3>PATCH edit SL/TP — <span class="badge">PASS (200)</span></h3>
+<p>Requires <code>stoploss_order_id</code> and <code>takeprofit_order_id</code> in the request body.</p>
+<pre><code>curl -X PATCH "https://trade.mudrex.com/fapi/v1/futures/positions/{position_id}/riskorder" \
+  -H "Content-Type: application/json" \
+  -H "X-Authentication: your-secret-key" \
+  -d '{
+    "stoploss_price": "0.095",
+    "takeprofit_price": "0.14",
+    "stoploss_order_id": "019ecc5d-d102-7c2e-a1ee-84df95bcc2c2",
+    "takeprofit_order_id": "019ecc5d-d102-7c31-97cb-33d44488c69b",
+    "is_stoploss": true,
+    "is_takeprofit": true,
+    "trigger_type": "MARKET"
+  }'</code></pre>
+<pre><code>{
+    "success": true,
+    "data": {
+        "message": "Risk order amended successfully"
+    }
+}</code></pre>
+<p>SL updated <code>0.10 → 0.095</code>, TP updated <code>0.13 → 0.14</code> (USDT prices).</p>
+
+<h3>PATCH amend order — <span class="badge">PASS (200)</span></h3>
+<p>Requires both <code>order_price</code> and <code>quantity</code> in the request body (price-only amend fails).</p>
+<pre><code># 1. Place LIMIT order
+curl -X POST "https://trade.mudrex.com/fapi/v1/futures/SOMIUSDT/order?is_symbol" \
+  -H "Content-Type: application/json" \
+  -H "X-Authentication: your-secret-key" \
+  -d '{
+    "leverage": "5",
+    "quantity": "44.0",
+    "order_price": "0.11400",
+    "order_type": "LONG",
+    "trigger_type": "LIMIT",
+    "trade_currency": "INR"
+  }'
+
+# 2. Amend order
+curl -X PATCH "https://trade.mudrex.com/fapi/v1/futures/orders/{order_id}" \
+  -H "Content-Type: application/json" \
+  -H "X-Authentication: your-secret-key" \
+  -d '{
+    "order_price": "0.11380",
+    "quantity": "44.0"
+  }'</code></pre>
+<pre><code>{
+    "success": true,
+    "data": {
+        "message": "Order updated successfully"
+    }
+}</code></pre>
+<p>Price updated <code>0.114 → 0.1138</code> on verified GET.</p>
+
+<hr>
+
+<h2>Full endpoint matrix</h2>
+
+<h3>Wallet</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><code>/wallet/funds?trade_currency=INR</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>2</td><td><code>/futures/transfers/inr</code> (SPOT→FUTURES)</td><td>POST</td><td>202</td><td class="pass">PASS</td></tr>
+    <tr><td>3</td><td><code>/futures/transfers/inr</code> (FUTURES→SPOT)</td><td>POST</td><td>202</td><td class="pass">PASS</td></tr>
+    <tr><td>4</td><td><code>/wallet/futures/transfer</code> + INR</td><td>POST</td><td>400</td><td class="pass">PASS (expected)</td></tr>
+  </tbody>
+</table>
+
+<h3>Futures wallet &amp; transactions</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>5</td><td><code>/futures/funds?trade_currency=INR</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>6</td><td><code>/futures/transactions?trade_currency=INR</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>7</td><td><code>/futures/funds?trade_currency=EUR</code></td><td>GET</td><td>400</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Assets</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>8</td><td><code>/futures?limit=3</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>9</td><td><code>/futures/BTCUSDT?is_symbol</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>10</td><td><code>/futures/SOMIUSDT?is_symbol</code></td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Leverage</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>11</td><td>GET leverage INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>12</td><td>POST set leverage INR</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>13</td><td>GET leverage never set</td><td>GET</td><td>404</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Orders</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>14</td><td>POST place order (MARKET)</td><td>POST</td><td>202</td><td class="pass">PASS</td></tr>
+    <tr><td>15</td><td>POST place order (LIMIT)</td><td>POST</td><td>202</td><td class="pass">PASS</td></tr>
+    <tr><td>16</td><td>GET open orders INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>17</td><td>GET order history INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>18</td><td>GET order by id</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>19</td><td>PATCH amend order</td><td>PATCH</td><td>200</td><td class="pass">PASS (retest)</td></tr>
+    <tr><td>20</td><td>DELETE cancel order</td><td>DELETE</td><td>200</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Positions</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>21</td><td>GET open positions INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>22</td><td>GET position history INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>23</td><td>GET liq-price</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>24</td><td>GET liq-price + ext_margin</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>25</td><td>POST add-margin (+)</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>26</td><td>POST add-margin (-)</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>27</td><td>POST set SL/TP</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>28</td><td>PATCH edit SL/TP</td><td>PATCH</td><td>200</td><td class="pass">PASS (retest)</td></tr>
+    <tr><td>29</td><td>POST partial close</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+    <tr><td>30</td><td>POST reverse position</td><td>POST</td><td>202</td><td class="pass">PASS</td></tr>
+    <tr><td>31</td><td>POST square off</td><td>POST</td><td>200</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Fees</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>32</td><td>GET fee history INR</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h3>Backward compatibility</h3>
+<table>
+  <thead>
+    <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>33</td><td>USDT endpoints (no trade_currency)</td><td>GET</td><td>200</td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>API usage notes (discovered during testing)</h2>
+<table>
+  <thead>
+    <tr><th>Endpoint</th><th>Requirement</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>PATCH edit SL/TP</td><td>Must include <code>stoploss_order_id</code> and <code>takeprofit_order_id</code> from position or open orders</td></tr>
+    <tr><td>PATCH amend order</td><td>Must include both <code>order_price</code> and <code>quantity</code> — price-only returns <code>400</code></td></tr>
+    <tr><td>POST LIMIT order</td><td>Notional must meet <code>min_notional_value</code> (5 USDT) at the limit price</td></tr>
+    <tr><td>GET INR spot</td><td>May show <code>0</code> while funds are still transferable — use explicit amount in transfer</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Re-run commands</h2>
+<pre><code>export MUDREX_API_SECRET="your-secret"
+bash testing/curl/run_inr_tests.sh
+bash testing/curl/run_remaining_tests.sh
+bash testing/curl/run_retest_patch.sh</code></pre>
+
+<hr>
+
+<h2>Conclusion</h2>
+<p><strong>All 28 INR-capable API endpoints pass on production.</strong> The two previously incomplete tests were resolved by correcting request payloads, not API defects.</p>
+
+</body>
+</html>

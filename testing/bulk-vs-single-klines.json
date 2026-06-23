@@ -1,0 +1,111 @@
+{
+  "generated": "2026-06-20T05:55:34Z",
+  "results": [
+    {
+      "name": "LTP full OHLCV",
+      "bulk_count": 59,
+      "single_count": 59,
+      "same_length": true,
+      "same_data": true,
+      "first_open_time_match": true,
+      "last_close_match": true,
+      "bulk_last": [
+        1781934840,
+        63627.5,
+        63683.8,
+        63627.5,
+        63655.1,
+        68.259
+      ],
+      "single_last": [
+        1781934840,
+        63627.5,
+        63683.8,
+        63627.5,
+        63655.1,
+        68.259
+      ],
+      "bulk_url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=1m&start_time=1781931331&end_time=1781934931&ohlcv=true&partial=true&type=linear",
+      "single_url": "https://price.mudrex.com/api/v1/asset/btc/usdt/klines?start_time=1781931331&end_time=1781934931&aggregation=1m&ohlcv=true&type=linear"
+    },
+    {
+      "name": "LTP bulk 4-param only",
+      "bulk_count": 59,
+      "sample": [
+        [
+          1781931360,
+          0,
+          0,
+          0,
+          63557,
+          0
+        ],
+        [
+          1781931420,
+          0,
+          0,
+          0,
+          63565.1,
+          0
+        ]
+      ],
+      "close_only": true,
+      "bulk_url": "https://price.mudrex.com/api/v1/assets/price?assets=btc/usdt&aggregation=1m&start_time=1781931331&end_time=1781934931",
+      "note": "No single-asset equivalent without ohlcv param on bulk path"
+    },
+    {
+      "name": "Mark full OHLCV",
+      "bulk_count": 59,
+      "single_count": 59,
+      "same_length": true,
+      "same_data": true,
+      "first_open_time_match": true,
+      "last_close_match": true,
+      "bulk_last": [
+        1781934840,
+        63627.6,
+        63677.13,
+        63627.5,
+        63662.89
+      ],
+      "single_last": [
+        1781934840,
+        63627.6,
+        63677.13,
+        63627.5,
+        63662.89
+      ],
+      "bulk_url": "https://price.mudrex.com/api/v1/assets/mark-price?assets=btc/usdt&aggregation=1m&start_time=1781931331&end_time=1781934931&ohlcv=true&partial=true&type=linear",
+      "single_url": "https://price.mudrex.com/api/v1/asset/btc/usdt/mark-price?start_time=1781931331&end_time=1781934931&aggregation=1m&ohlcv=true"
+    },
+    {
+      "name": "Mark bulk 4-param only",
+      "bulk_count": 59,
+      "sample": [
+        [
+          1781931360,
+          0,
+          0,
+          0,
+          63526
+        ],
+        [
+          1781931420,
+          0,
+          0,
+          0,
+          63535
+        ]
+      ],
+      "close_only": true,
+      "bulk_url": "https://price.mudrex.com/api/v1/assets/mark-price?assets=btc/usdt&aggregation=1m&start_time=1781931331&end_time=1781934931"
+    },
+    {
+      "name": "Bulk single asset key",
+      "asset_keys": [
+        "btc/usdt"
+      ],
+      "works": true
+    }
+  ]
+}
